@@ -77,7 +77,7 @@ Array::Transpose
 
 =head1 SEE ALSO
 
-L<https://rubygems.org/gems/flippy>
+L<flippy|https://rubygems.org/gems/flippy>
 
 =head1 LICENSE
 

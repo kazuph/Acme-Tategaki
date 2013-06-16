@@ -33,7 +33,7 @@ Array::Transpose
 
 # SEE ALSO
 
-[https://rubygems.org/gems/flippy](https://rubygems.org/gems/flippy)
+[flippy](https://rubygems.org/gems/flippy)
 
 # LICENSE
 
