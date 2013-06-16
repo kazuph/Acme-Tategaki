@@ -42,6 +42,7 @@
       },
       "runtime" : {
          "requires" : {
+            "Array::Transpose" : "0",
             "perl" : "5.008005"
          }
       },
