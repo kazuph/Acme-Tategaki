@@ -9,7 +9,8 @@ unless (scalar @ARGV) {
     print "Usage: \$ tategaki お前は、すでに、死んでいる。";
     exit 1;
 }
-Acme::Tategaki->tategaki(@ARGV);
+my @text = Acme::Tategaki->tategaki(@ARGV);
+print $_, "\n" for @text;
 
 __END__
 
@@ -44,13 +45,6 @@ Acme::Tategaki - It makes a text vertically.
 
 Acme::Tategaki makes a text vertically.
 
-=head1 LICENSE
-
-Copyright (C) Kazuhiro Homma.
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
-
 =head1 AUTHOR
 
 Kazuhiro Homma E<lt>kazuph@cpan.orgE<gt>
@@ -65,8 +59,11 @@ L<flippy|https://rubygems.org/gems/flippy>
 
 =head1 LICENSE
 
+Copyright (C) Kazuhiro Homma.
+
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
+
 
 =cut
 
