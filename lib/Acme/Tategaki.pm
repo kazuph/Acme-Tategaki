@@ -11,7 +11,7 @@ use List::Util qw(max);
 use Encode qw/decode_utf8 encode_utf8/;
 our @EXPORT = qw( tategaki );
 
-our $VERSION = "0.04";
+our $VERSION = "0.05";
 
 my @punc             = qw(、 。 ， ．);
 my @horizontal_words = qw(ー 「 」 → ↑ ← ↓ ＝ …);

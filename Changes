@@ -2,6 +2,9 @@ Revision history for Perl extension Acme-Tategaki
 
 {{$NEXT}}
 
+0.05 2013-06-16T13:25:05Z
+    - return scalar or array
+
 0.04 2013-06-16T08:15:53Z
     - split by punctuation
 
