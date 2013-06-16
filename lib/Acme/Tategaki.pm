@@ -4,14 +4,14 @@ use strict;
 use warnings;
 use utf8;
 
-our $VERSION = "0.04";
+use parent 'Exporter';
 
 use Array::Transpose;
 use List::Util qw(max);
 use Encode qw/decode_utf8 encode_utf8/;
-use Exporter::Lite;
+our @EXPORT = qw( tategaki );
 
-our @EXPORT = qw(tategaki);
+our $VERSION = "0.04";
 
 my @punc             = qw(、 。 ， ．);
 my @horizontal_words = qw(ー 「 」 → ↑ ← ↓ ＝ …);
@@ -19,7 +19,6 @@ my @vertical_words   = qw(｜ ¬ ∟ ↓ → ↑ ← ॥ ：);
 my %replace_words = map {$horizontal_words[$_] => $vertical_words[$_]} (0..$#horizontal_words);
 
 sub tategaki {
-    my $self = shift;
     my @text = @_;
     return unless scalar @text;
     my $text = join '　', map{decode_utf8 $_} @text;
@@ -38,11 +37,16 @@ sub tategaki {
 }
 
 if ( __FILE__ eq $0 ) {
-    my $text = Acme::Tategaki->tategaki("お前は、すでに、死んでいる。");
-    print $text, "\n";
-    my @text = Acme::Tategaki->tategaki("お前は、すでに、死んでいる。");
-    print $_, "\n" for @text;
 
+    my $text = Acme::Tategaki::tategaki("お前は、すでに、死んでいる。");
+    warn $text, "\n";
+    my @text = Acme::Tategaki::tategaki("お前は、すでに、死んでいる。");
+    warn $_, "\n" for @text;
+
+    $text = tategaki("お前は、すでに、死んでいる。");
+    warn $text, "\n";
+    @text = tategaki("お前は、すでに、死んでいる。");
+    warn $_, "\n" for @text;
 }
 
 1;
@@ -57,7 +61,7 @@ Acme::Tategaki - It makes a text vertically.
 
 =head1 SYNOPSIS
 
-    $ perl -MAcme::Tategaki -e 'print scalar Acme::Tategaki->tategaki("お前は、すでに、死んでいる。")'
+    $ perl -MAcme::Tategaki -e 'print scalar tategaki("お前は、すでに、死んでいる。")'
     死　す　お
     ん　で　前
     で　に　は
