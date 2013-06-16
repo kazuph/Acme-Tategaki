@@ -4,7 +4,7 @@ Acme::Tategaki - It makes a text vertically.
 
 # SYNOPSIS
 
-    $ perl -MAcme::Tategaki -e 'print Acme::Tategaki->tategaki("お前は、すでに、死んでいる。")'
+    $ perl -MAcme::Tategaki -e 'print scalar Acme::Tategaki->tategaki("お前は、すでに、死んでいる。")'
     死　す　お
     ん　で　前
     で　に　は

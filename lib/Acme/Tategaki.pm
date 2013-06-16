@@ -3,11 +3,15 @@ use 5.008005;
 use strict;
 use warnings;
 use utf8;
+
+our $VERSION = "0.04";
+
 use Array::Transpose;
 use List::Util qw(max);
 use Encode qw/decode_utf8 encode_utf8/;
+use Exporter::Lite;
 
-our $VERSION = "0.04";
+our @EXPORT = qw(tategaki);
 
 my @punc             = qw(、 。 ， ．);
 my @horizontal_words = qw(ー 「 」 → ↑ ← ↓ ＝ …);
@@ -30,11 +34,15 @@ sub tategaki {
     @text = map {[split //, $_]} @text;
     @text = transpose([@text]);
     @text = map{encode_utf8 $_} map {join '　', reverse @$_} @text;
-    return @text;
+    return wantarray ? @text : join "\n", @text;
 }
 
 if ( __FILE__ eq $0 ) {
-    tategaki();
+    my $text = Acme::Tategaki->tategaki("お前は、すでに、死んでいる。");
+    print $text, "\n";
+    my @text = Acme::Tategaki->tategaki("お前は、すでに、死んでいる。");
+    print $_, "\n" for @text;
+
 }
 
 1;
@@ -49,7 +57,7 @@ Acme::Tategaki - It makes a text vertically.
 
 =head1 SYNOPSIS
 
-    $ perl -MAcme::Tategaki -e 'print Acme::Tategaki->tategaki("お前は、すでに、死んでいる。")'
+    $ perl -MAcme::Tategaki -e 'print scalar Acme::Tategaki->tategaki("お前は、すでに、死んでいる。")'
     死　す　お
     ん　で　前
     で　に　は
