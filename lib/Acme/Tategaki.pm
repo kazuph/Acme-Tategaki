@@ -8,7 +8,10 @@ use utf8;
 our $VERSION = "0.01";
 
 sub tategaki {
-    print '縦書になってる？';
+    my $self = shift;
+    my $text = shift || 'hoge';
+
+    print $text;
 }
 
 1;
