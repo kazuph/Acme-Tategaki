@@ -4,8 +4,7 @@ Acme::Tategaki - It makes a text vertically.
 
 # SYNOPSIS
 
-    $ tategaki ゆうてい　みやおう　き
-    むこう　ほりいゆうじ　とりやまあきら　ぺぺぺぺぺぺぺぺぺ　ぺぺぺぺぺぺぺぺ
+    $ tategaki ゆうてい　みやおう　きむこう　ほりいゆうじ　とりやまあきら　ぺぺぺぺぺぺぺぺぺ　ぺぺぺぺぺぺぺぺ
     ぺ　ぺぺぺぺぺぺぺぺぺ
     ぺ　ぺ　ぺ　と　ほ　き　み　ゆ
     ぺ　ぺ　ぺ　り　り　む　や　う
