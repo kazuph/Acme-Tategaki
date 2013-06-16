@@ -7,7 +7,7 @@ use Array::Transpose;
 use List::Util qw(max);
 use Encode qw/decode_utf8 encode_utf8/;
 
-our $VERSION = "0.03";
+our $VERSION = "0.04";
 
 my @punc             = qw(、 。 ， ．);
 my @horizontal_words = qw(ー 「 」 → ↑ ← ↓ ＝ …);
