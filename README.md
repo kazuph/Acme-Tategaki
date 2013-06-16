@@ -1,14 +1,22 @@
 # NAME
 
-Acme::Tategaki - It's new $module
+
+
+Acme::Tategaki - It makes a text vertically.
 
 # SYNOPSIS
 
-    use Acme::Tategaki;
+    $ tategaki お前は、　すでに、　死んでいる。
+    死　す　お
+    ん　で　前
+    で　に　は
+    い　、　、
+    る
+    。
 
 # DESCRIPTION
 
-Acme::Tategaki is ...
+Acme::Tategaki makes a text vertically.
 
 # LICENSE
 
@@ -19,4 +27,4 @@ it under the same terms as Perl itself.
 
 # AUTHOR
 
-Kazuhiro Homma <kazu.homma@gmail.com>
+Kazuhiro Homma <kazuph@cpan.org>

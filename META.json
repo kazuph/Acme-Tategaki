@@ -1,7 +1,7 @@
 {
-   "abstract" : "It's new $module",
+   "abstract" : "It makes a text vertically.",
    "author" : [
-      "Kazuhiro Homma <kazu.homma@gmail.com>"
+      "Kazuhiro Homma <kazuph@cpan.org>"
    ],
    "dynamic_config" : 0,
    "generated_by" : "Minilla/v0.5.3, CPAN::Meta::Converter version 2.120921",
@@ -64,5 +64,8 @@
          "web" : "https://github.com/kazuph/Acme-Tategaki"
       }
    },
-   "version" : "0.01"
+   "version" : "0.01",
+   "x_contributors" : [
+      "Kazuhiro Homma <kazu.homma@gmail.com>"
+   ]
 }

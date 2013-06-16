@@ -43,15 +43,22 @@ __END__
 
 =head1 NAME
 
-Acme::Tategaki - It's new $module
+
+Acme::Tategaki - It makes a text vertically.
 
 =head1 SYNOPSIS
 
-    use Acme::Tategaki;
+    $ tategaki お前は、　すでに、　死んでいる。
+    死　す　お
+    ん　で　前
+    で　に　は
+    い　、　、
+    る
+    。
 
 =head1 DESCRIPTION
 
-Acme::Tategaki is ...
+Acme::Tategaki makes a text vertically.
 
 =head1 LICENSE
 
@@ -62,7 +69,7 @@ it under the same terms as Perl itself.
 
 =head1 AUTHOR
 
-Kazuhiro Homma E<lt>kazu.homma@gmail.comE<gt>
+Kazuhiro Homma E<lt>kazuph@cpan.orgE<gt>
 
 =cut
 
