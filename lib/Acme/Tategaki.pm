@@ -73,7 +73,7 @@ Kazuhiro Homma E<lt>kazuph@cpan.orgE<gt>
 
 =head1 DEPENDENCIES
 
-Array::Transpose
+L<Array::Transpose>
 
 =head1 SEE ALSO
 

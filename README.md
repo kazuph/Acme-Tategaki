@@ -29,7 +29,7 @@ Kazuhiro Homma <kazuph@cpan.org>
 
 # DEPENDENCIES
 
-Array::Transpose
+[Array::Transpose](http://search.cpan.org/perldoc?Array::Transpose)
 
 # SEE ALSO
 
