@@ -5,4 +5,8 @@ use FindBin;
 use lib "$FindBin::Bin/../extlib/lib/perl5";
 use lib "$FindBin::Bin/../lib";
 use Acme::Tategaki;
+unless (scalar @ARGV) {
+    print "Usage: \$ tategaki お前は、　すでに、　死んでいる。";
+    exit 1;
+}
 Acme::Tategaki->tategaki(@ARGV);

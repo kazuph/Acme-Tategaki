@@ -17,6 +17,7 @@ my %replace_words = map {$horizontal_words[$_] => $vertical_words[$_]} (0..$#hor
 sub tategaki {
     my $self = shift;
     my @text = @_;
+    return unless scalar @text;
     my $text = join '　', map{decode_utf8 $_} @text;
 
     while (my($key, $value) = each %replace_words) {
@@ -48,13 +49,18 @@ Acme::Tategaki - It makes a text vertically.
 
 =head1 SYNOPSIS
 
-    $ tategaki お前は、　すでに、　死んでいる。
-    死　す　お
-    ん　で　前
-    で　に　は
-    い　、　、
-    る
-    。
+    $ tategaki ゆうてい　みやおう　き
+    むこう　ほりいゆうじ　とりやまあきら　ぺぺぺぺぺぺぺぺぺ　ぺぺぺぺぺぺぺぺ
+    ぺ　ぺぺぺぺぺぺぺぺぺ
+    ぺ　ぺ　ぺ　と　ほ　き　み　ゆ
+    ぺ　ぺ　ぺ　り　り　む　や　う
+    ぺ　ぺ　ぺ　や　い　こ　お　て
+    ぺ　ぺ　ぺ　ま　ゆ　う　う　い
+    ぺ　ぺ　ぺ　あ　う
+    ぺ　ぺ　ぺ　き　じ
+    ぺ　ぺ　ぺ　ら
+    ぺ　ぺ　ぺ
+    ぺ　ぺ　ぺ
 
 =head1 DESCRIPTION
 
