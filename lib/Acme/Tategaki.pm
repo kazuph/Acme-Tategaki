@@ -37,12 +37,12 @@ if ( __FILE__ eq $0 ) {
 }
 
 1;
+
 __END__
 
 =encoding utf-8
 
 =head1 NAME
-
 
 Acme::Tategaki - It makes a text vertically.
 
@@ -70,6 +70,19 @@ it under the same terms as Perl itself.
 =head1 AUTHOR
 
 Kazuhiro Homma E<lt>kazuph@cpan.orgE<gt>
+
+=head1 DEPENDENCIES
+
+Array::Transpose
+
+=head1 SEE ALSO
+
+L<https://rubygems.org/gems/flippy>
+
+=head1 LICENSE
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
 
 =cut
 

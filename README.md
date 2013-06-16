@@ -1,7 +1,5 @@
 # NAME
 
-
-
 Acme::Tategaki - It makes a text vertically.
 
 # SYNOPSIS
@@ -28,3 +26,16 @@ it under the same terms as Perl itself.
 # AUTHOR
 
 Kazuhiro Homma <kazuph@cpan.org>
+
+# DEPENDENCIES
+
+Array::Transpose
+
+# SEE ALSO
+
+[https://rubygems.org/gems/flippy](https://rubygems.org/gems/flippy)
+
+# LICENSE
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
