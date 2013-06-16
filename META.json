@@ -52,5 +52,16 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/kazuph/Acme-Tategaki/issues"
+      },
+      "homepage" : "https://github.com/kazuph/Acme-Tategaki",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/kazuph/Acme-Tategaki.git",
+         "web" : "https://github.com/kazuph/Acme-Tategaki"
+      }
+   },
    "version" : "0.01"
 }
