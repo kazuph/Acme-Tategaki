@@ -2,10 +2,14 @@ package Acme::Tategaki;
 use 5.008005;
 use strict;
 use warnings;
+use utf8;
+# use Moo;
 
 our $VERSION = "0.01";
 
-
+sub tategaki {
+    print '縦書になってる？';
+}
 
 1;
 __END__
