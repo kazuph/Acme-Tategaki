@@ -23,7 +23,7 @@ sub tategaki {
     while (my($key, $value) = each %replace_words) {
         $text =~ s/$key/$value/g;
     }
-
+    $text =~ s/$_\s?/$_　/g for @punc;
     @text = split /\s/, $text;
     my $max_lengh =  max map {length $_} @text;
     @text = map{$_ . ('　' x ($max_lengh - length $_))} @text;
@@ -49,16 +49,13 @@ Acme::Tategaki - It makes a text vertically.
 
 =head1 SYNOPSIS
 
-    $ tategaki ゆうてい　みやおう　きむこう　ほりいゆうじ　とりやまあきら　ぺぺぺぺぺぺぺぺぺ　ぺぺぺぺぺぺぺぺぺ　ぺぺぺぺぺぺぺぺぺ
-    ぺ　ぺ　ぺ　と　ほ　き　み　ゆ
-    ぺ　ぺ　ぺ　り　り　む　や　う
-    ぺ　ぺ　ぺ　や　い　こ　お　て
-    ぺ　ぺ　ぺ　ま　ゆ　う　う　い
-    ぺ　ぺ　ぺ　あ　う
-    ぺ　ぺ　ぺ　き　じ
-    ぺ　ぺ　ぺ　ら
-    ぺ　ぺ　ぺ
-    ぺ　ぺ　ぺ
+    $ perl -MAcme::Tategaki -e 'print Acme::Tategaki->tategaki("お前は、すでに、死んでいる。")'
+    死　す　お
+    ん　で　前
+    で　に　は
+    い　、　、
+    る
+    。
 
 =head1 DESCRIPTION
 

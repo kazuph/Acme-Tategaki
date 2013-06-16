@@ -6,7 +6,67 @@ use lib "$FindBin::Bin/../extlib/lib/perl5";
 use lib "$FindBin::Bin/../lib";
 use Acme::Tategaki;
 unless (scalar @ARGV) {
-    print "Usage: \$ tategaki お前は、　すでに、　死んでいる。";
+    print "Usage: \$ tategaki お前は、すでに、死んでいる。";
     exit 1;
 }
 Acme::Tategaki->tategaki(@ARGV);
+
+__END__
+
+=encoding utf-8
+
+=head1 NAME
+
+Acme::Tategaki - It makes a text vertically.
+
+=head1 SYNOPSIS
+
+    $ tategaki お前は、すでに、死んでいる。
+    死　す　お
+    ん　で　前
+    で　に　は
+    い　、　、
+    る
+    。
+
+    $ tategaki ゆうてい　みやおう　きむこう　ほりいゆうじ　とりやまあきら　ぺぺぺぺぺぺぺぺぺ　ぺぺぺぺぺぺぺぺぺ　ぺぺぺぺぺぺぺぺぺ
+    ぺ　ぺ　ぺ　と　ほ　き　み　ゆ
+    ぺ　ぺ　ぺ　り　り　む　や　う
+    ぺ　ぺ　ぺ　や　い　こ　お　て
+    ぺ　ぺ　ぺ　ま　ゆ　う　う　い
+    ぺ　ぺ　ぺ　あ　う
+    ぺ　ぺ　ぺ　き　じ
+    ぺ　ぺ　ぺ　ら
+    ぺ　ぺ　ぺ
+    ぺ　ぺ　ぺ
+
+=head1 DESCRIPTION
+
+Acme::Tategaki makes a text vertically.
+
+=head1 LICENSE
+
+Copyright (C) Kazuhiro Homma.
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=head1 AUTHOR
+
+Kazuhiro Homma E<lt>kazuph@cpan.orgE<gt>
+
+=head1 DEPENDENCIES
+
+L<Array::Transpose>
+
+=head1 SEE ALSO
+
+L<flippy|https://rubygems.org/gems/flippy>
+
+=head1 LICENSE
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=cut
+
