@@ -2,6 +2,9 @@ Revision history for Perl extension Acme-Tategaki
 
 {{$NEXT}}
 
+0.02 2013-06-16T07:34:30Z
+    - catch a error
+
 0.01 2013-06-16T06:34:58Z
 
     - original version
