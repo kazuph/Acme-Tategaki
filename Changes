@@ -2,6 +2,9 @@ Revision history for Perl extension Acme-Tategaki
 
 {{$NEXT}}
 
+0.08 2013-06-17T06:37:04Z
+    - Do not use /usr/bin/env
+
 0.07 2013-06-17T02:18:37Z
     - added vertical forms (FE10 to FE19) transformation.
 
