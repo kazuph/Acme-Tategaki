@@ -2,6 +2,9 @@ Revision history for Perl extension Acme-Tategaki
 
 {{$NEXT}}
 
+0.07 2013-06-17T02:18:37Z
+    - added vertical forms (FE10 to FE19) transformation.
+
 0.06 2013-06-17T00:37:20Z
     - modified POD
 
