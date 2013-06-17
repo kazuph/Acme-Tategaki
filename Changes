@@ -2,6 +2,9 @@ Revision history for Perl extension Acme-Tategaki
 
 {{$NEXT}}
 
+0.06 2013-06-17T00:37:20Z
+    - modified POD
+
 0.05 2013-06-16T13:25:05Z
     - return scalar or array
 
