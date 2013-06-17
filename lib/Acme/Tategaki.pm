@@ -27,6 +27,19 @@ sub tategaki {
         $text =~ s/$key/$value/g;
     }
     $text =~ s/$_\s?/$_　/g for @punc;
+
+    # vertical forms (FE10 to FE19)
+    $text =~ s/,/︐/go;
+    $text =~ s/、/︑/go;
+    $text =~ s/。/︒/go;
+    $text =~ s/：/︓/go;
+    $text =~ s/；/︔/go;
+    $text =~ s/！/︕/go;
+    $text =~ s/？/︖/go;
+    $text =~ s/〖/︗/go;
+    $text =~ s/〗/︘/go;
+    $text =~ s/…/︙/go;
+
     @text = split /\s/, $text;
     my $max_lengh =  max map {length $_} @text;
     @text = map{$_ . ('　' x ($max_lengh - length $_))} @text;
