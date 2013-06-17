@@ -8,9 +8,9 @@ Acme::Tategaki - This Module makes a text vertically.
     死　す　お
     ん　で　前
     で　に　は
-    い　、　、
+    い　︑　︑
     る
-    。
+    ︒　　　　
 
 # DESCRIPTION
 
