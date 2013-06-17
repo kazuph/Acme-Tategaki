@@ -57,7 +57,7 @@ __END__
 
 =head1 NAME
 
-Acme::Tategaki - It makes a text vertically.
+Acme::Tategaki - This Module makes a text vertically.
 
 =head1 SYNOPSIS
 

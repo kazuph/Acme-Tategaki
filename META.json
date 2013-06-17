@@ -1,10 +1,10 @@
 {
-   "abstract" : "It makes a text vertically.",
+   "abstract" : "This Module makes a text vertically.",
    "author" : [
       "Kazuhiro Homma <kazuph@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v0.5.3, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Minilla/v0.5.3, CPAN::Meta::Converter version 2.130880",
    "license" : [
       "perl_5"
    ],
@@ -59,8 +59,7 @@
       },
       "homepage" : "https://github.com/kazuph/Acme-Tategaki",
       "repository" : {
-         "type" : "git",
-         "url" : "git://github.com/kazuph/Acme-Tategaki.git",
+         "url" : "https://github.com/kazuph/Acme-Tategaki.git",
          "web" : "https://github.com/kazuph/Acme-Tategaki"
       }
    },

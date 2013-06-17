@@ -1,6 +1,6 @@
 # NAME
 
-Acme::Tategaki - It makes a text vertically.
+Acme::Tategaki - This Module makes a text vertically.
 
 # SYNOPSIS
 
