@@ -14,8 +14,8 @@ our @EXPORT = qw( tategaki );
 our $VERSION = "0.06";
 
 my @punc             = qw(、 。 ， ．);
-my @horizontal_words = qw(ー 「 」 → ↑ ← ↓ ＝ …);
-my @vertical_words   = qw(｜ ¬ ∟ ↓ → ↑ ← ॥ ：);
+my @horizontal_words = qw(ー 「 」 → ↑ ← ↓ ＝ );
+my @vertical_words   = qw(｜ ¬ ∟ ↓ → ↑ ← ॥ );
 my %replace_words = map {$horizontal_words[$_] => $vertical_words[$_]} (0..$#horizontal_words);
 
 sub tategaki {
