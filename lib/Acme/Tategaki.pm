@@ -10,7 +10,7 @@ use Encode qw/decode_utf8 encode_utf8/;
 use parent 'Exporter';
 our @EXPORT = qw( tategaki );
 
-our $VERSION = "0.08";
+our $VERSION = "0.09";
 
 my @punc = qw(、 。 ， ．);
 
