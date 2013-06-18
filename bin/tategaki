@@ -2,12 +2,20 @@
 use strict;
 use warnings;
 use 5.008001;
+use utf8;
+use feature 'say';
 
 use Acme::Tategaki;
+use Encode;
+use Encode::Locale;
+
+Encode::Locale::decode_argv;
+
 unless (scalar @ARGV) {
     print "Usage: \$ tategaki お前は、すでに、死んでいる。";
     exit 1;
 }
+
 print scalar tategaki(@ARGV);
 
 __END__
