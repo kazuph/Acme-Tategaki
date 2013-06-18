@@ -4,18 +4,18 @@ use strict;
 use warnings;
 use utf8;
 
-use parent 'Exporter';
-
 use Array::Transpose;
 use List::Util qw(max);
 use Encode qw/decode_utf8 encode_utf8/;
+
+use parent 'Exporter';
 our @EXPORT = qw( tategaki );
 
 our $VERSION = "0.08";
 
 my @punc             = qw(、 。 ， ．);
-my @horizontal_words = qw(ー 「 」 → ↑ ← ↓ ＝ );
-my @vertical_words   = qw(｜ ¬ ∟ ↓ → ↑ ← ॥ );
+my @horizontal_words = qw(ー 「 」 → ↑ ← ↓ ＝);
+my @vertical_words   = qw(｜ ¬ ∟ ↓ → ↑ ← ॥);
 my %replace_words = map {$horizontal_words[$_] => $vertical_words[$_]} (0..$#horizontal_words);
 
 sub tategaki {
@@ -23,19 +23,13 @@ sub tategaki {
     return unless scalar @text;
     my $text = join '　', map{decode_utf8 $_} @text;
 
-    while (my($key, $value) = each %replace_words) {
-        $text =~ s/$key/$value/g;
-    }
+    $text =~ s/$_/$replace_words{$_}/g for keys %replace_words;
     $text =~ s/$_\s?/$_　/g for @punc;
 
     # vertical forms (FE10 to FE19)
     $text =~ s/,/︐/go;
     $text =~ s/、/︑/go;
     $text =~ s/。/︒/go;
-    $text =~ s/：/︓/go;
-    $text =~ s/；/︔/go;
-    $text =~ s/！/︕/go;
-    $text =~ s/？/︖/go;
     $text =~ s/〖/︗/go;
     $text =~ s/〗/︘/go;
     $text =~ s/…/︙/go;
@@ -50,16 +44,7 @@ sub tategaki {
 }
 
 if ( __FILE__ eq $0 ) {
-
-    my $text = Acme::Tategaki::tategaki("お前は、すでに、死んでいる。");
-    warn $text, "\n";
-    my @text = Acme::Tategaki::tategaki("お前は、すでに、死んでいる。");
-    warn $_, "\n" for @text;
-
-    $text = tategaki("お前は、すでに、死んでいる。");
-    warn $text, "\n";
-    @text = tategaki("お前は、すでに、死んでいる。");
-    warn $_, "\n" for @text;
+    print scalar tategaki("→");
 }
 
 1;
@@ -79,7 +64,7 @@ Acme::Tategaki - This Module makes a text vertically.
     ん　で　前
     で　に　は
     い　︑　︑
-    る
+    る　　　　
     ︒　　　　
 
 =head1 DESCRIPTION
