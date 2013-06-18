@@ -9,14 +9,16 @@ use Acme::Tategaki;
 use Encode;
 use Encode::Locale;
 
+binmode STDOUT => ':encoding(console_out)';
 Encode::Locale::decode_argv;
 
 unless (scalar @ARGV) {
-    print "Usage: \$ tategaki お前は、すでに、死んでいる。";
+    print "Usage: \$ tategaki お前は、すでに、死んでいる。\n";
     exit 1;
 }
 
 print scalar tategaki(@ARGV);
+print "\n";
 
 __END__
 
