@@ -43,6 +43,7 @@
       "runtime" : {
          "requires" : {
             "Array::Transpose::Ragged" : "0",
+            "Encode::Locale" : "0",
             "perl" : "5.008005"
          }
       },
