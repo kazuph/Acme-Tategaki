@@ -4,8 +4,7 @@ use strict;
 use warnings;
 use utf8;
 
-use Array::Transpose;
-use List::Util qw(max);
+use Array::Transpose::Ragged qw/transpose_ragged/;
 use Encode qw/decode_utf8 encode_utf8/;
 
 use parent 'Exporter';
@@ -13,7 +12,7 @@ our @EXPORT = qw( tategaki );
 
 our $VERSION = "0.08";
 
-my @punc             = qw(、 。 ， ．);
+my @punc = qw(、 。 ， ．);
 
 sub tategaki {
     my @text = @_;
@@ -22,18 +21,13 @@ sub tategaki {
 
     $text =~ s/$_\s?/$_　/g for @punc;
     $text =~ tr/ー「」→↑←↓＝,、。〖〗…/｜¬∟↓→↑←॥︐︑︒︗︘︙/;
-
     @text = split /\s/, $text;
-    my $max_lengh = max map { length $_ } @text;
-    @text = map { $_ . ( '　' x ( $max_lengh - length $_ ) ) } @text;
+
     @text = map { [ split //, $_ ] } @text;
-    @text = transpose( [@text] );
+    @text = transpose_ragged( \@text );
+    @text = map { [ map {$_ // '　' } @$_ ] } @text;
     @text = map { encode_utf8 $_} map { join '　', reverse @$_ } @text;
     return wantarray ? @text : join "\n", @text;
-}
-
-if ( __FILE__ eq $0 ) {
-    print scalar tategaki("→");
 }
 
 1;
@@ -66,7 +60,7 @@ Kazuhiro Homma E<lt>kazuph@cpan.orgE<gt>
 
 =head1 DEPENDENCIES
 
-L<Array::Transpose>
+L<Array::Transpose>, L<Array::Transpose::Ragged>
 
 =head1 SEE ALSO
 

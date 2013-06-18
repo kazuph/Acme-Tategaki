@@ -49,12 +49,11 @@ Kazuhiro Homma E<lt>kazuph@cpan.orgE<gt>
 
 =head1 DEPENDENCIES
 
-L<Array::Transpose>
+L<Array::Transpose>, L<Array::Transpose::Ragged>
 
 =head1 SEE ALSO
 
-L<Acme::Tategaki>
-L<flippy|https://rubygems.org/gems/flippy>
+L<Acme::Tategaki>, L<flippy|https://rubygems.org/gems/flippy>
 
 =head1 LICENSE
 

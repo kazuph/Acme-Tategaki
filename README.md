@@ -9,7 +9,7 @@ Acme::Tategaki - This Module makes a text vertically.
     ん　で　前
     で　に　は
     い　︑　︑
-    る
+    る　　　　
     ︒　　　　
 
 # DESCRIPTION
@@ -22,7 +22,7 @@ Kazuhiro Homma <kazuph@cpan.org>
 
 # DEPENDENCIES
 
-[Array::Transpose](http://search.cpan.org/perldoc?Array::Transpose)
+[Array::Transpose](http://search.cpan.org/perldoc?Array::Transpose), [Array::Transpose::Ragged](http://search.cpan.org/perldoc?Array::Transpose::Ragged)
 
 # SEE ALSO
 
