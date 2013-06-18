@@ -19,6 +19,13 @@ __DATA__
 
 ===
 --- input
+ほげ、ふが。ほげ→
+--- expected
+ほ　ふ　ほ
+げ　が　げ
+↓　︒　︑
+===
+--- input
 cpan
 --- expected
 c
