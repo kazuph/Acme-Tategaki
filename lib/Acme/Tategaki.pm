@@ -25,7 +25,7 @@ sub tategaki {
 
     @text = map { [ split //, $_ ] } @text;
     @text = transpose_ragged( \@text );
-    @text = map { [ map {$_ // '　' } @$_ ] } @text;
+    @text = map { [ map {$_ || '　' } @$_ ] } @text;
     @text = map { encode_utf8 $_} map { join '　', reverse @$_ } @text;
     return wantarray ? @text : join "\n", @text;
 }
