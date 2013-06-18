@@ -14,32 +14,21 @@ our @EXPORT = qw( tategaki );
 our $VERSION = "0.08";
 
 my @punc             = qw(、 。 ， ．);
-my @horizontal_words = qw(ー 「 」 → ↑ ← ↓ ＝);
-my @vertical_words   = qw(｜ ¬ ∟ ↓ → ↑ ← ॥);
-my %replace_words = map {$horizontal_words[$_] => $vertical_words[$_]} (0..$#horizontal_words);
 
 sub tategaki {
     my @text = @_;
     return unless scalar @text;
-    my $text = join '　', map{decode_utf8 $_} @text;
+    my $text = join '　', map { decode_utf8 $_} @text;
 
-    $text =~ s/$_/$replace_words{$_}/g for keys %replace_words;
     $text =~ s/$_\s?/$_　/g for @punc;
-
-    # vertical forms (FE10 to FE19)
-    $text =~ s/,/︐/go;
-    $text =~ s/、/︑/go;
-    $text =~ s/。/︒/go;
-    $text =~ s/〖/︗/go;
-    $text =~ s/〗/︘/go;
-    $text =~ s/…/︙/go;
+    $text =~ tr/ー「」→↑←↓＝,、。〖〗…/｜¬∟↓→↑←॥︐︑︒︗︘︙/;
 
     @text = split /\s/, $text;
-    my $max_lengh =  max map {length $_} @text;
-    @text = map{$_ . ('　' x ($max_lengh - length $_))} @text;
-    @text = map {[split //, $_]} @text;
-    @text = transpose([@text]);
-    @text = map{encode_utf8 $_} map {join '　', reverse @$_} @text;
+    my $max_lengh = max map { length $_ } @text;
+    @text = map { $_ . ( '　' x ( $max_lengh - length $_ ) ) } @text;
+    @text = map { [ split //, $_ ] } @text;
+    @text = transpose( [@text] );
+    @text = map { encode_utf8 $_} map { join '　', reverse @$_ } @text;
     return wantarray ? @text : join "\n", @text;
 }
 
