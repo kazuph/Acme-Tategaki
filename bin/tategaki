@@ -6,7 +6,6 @@ use utf8;
 use feature 'say';
 
 use Acme::Tategaki;
-use Encode;
 use Encode::Locale;
 
 binmode STDOUT => ':encoding(console_out)';

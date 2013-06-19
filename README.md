@@ -4,7 +4,7 @@ Acme::Tategaki - This Module makes a text vertically.
 
 # SYNOPSIS
 
-    $ perl -MAcme::Tategaki -e 'print scalar tategaki("お前は、すでに、死んでいる。")'
+    $ perl -MAcme::Tategaki -MEncode -e 'print encode_utf8 tategaki(decode_utf8 "お前は、すでに、死んでいる。"), "\n";'
     死　す　お
     ん　で　前
     で　に　は

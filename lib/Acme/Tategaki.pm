@@ -29,11 +29,6 @@ sub tategaki {
     return wantarray ? @text : join "\n", @text;
 }
 
-if ( __FILE__ eq $0 ) {
-    use Encode;
-    print encode_utf8 tategaki(decode_utf8 "お前は、すでに、死んでいる。"), "\n";
-}
-
 1;
 
 __END__
