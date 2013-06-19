@@ -29,6 +29,11 @@ sub tategaki {
     return wantarray ? @text : join "\n", @text;
 }
 
+if ( __FILE__ eq $0 ) {
+    use Encode;
+    print encode_utf8 tategaki(decode_utf8 "お前は、すでに、死んでいる。"), "\n";
+}
+
 1;
 
 __END__
@@ -41,7 +46,7 @@ Acme::Tategaki - This Module makes a text vertically.
 
 =head1 SYNOPSIS
 
-    $ perl -MAcme::Tategaki -e 'print scalar tategaki("お前は、すでに、死んでいる。")'
+    $ perl -MAcme::Tategaki -MEncode -e 'print encode_utf8 tategaki(decode_utf8 "お前は、すでに、死んでいる。"), "\n";'
     死　す　お
     ん　で　前
     で　に　は
