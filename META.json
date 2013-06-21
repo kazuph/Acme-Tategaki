@@ -4,7 +4,7 @@
       "Kazuhiro Homma <kazuph@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v0.5.3, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Minilla/v0.5.3, CPAN::Meta::Converter version 2.130880",
    "license" : [
       "perl_5"
    ],
@@ -49,6 +49,7 @@
       },
       "test" : {
          "requires" : {
+            "Test::Base::Less" : "0.09",
             "Test::More" : "0.98"
          }
       }
@@ -60,8 +61,7 @@
       },
       "homepage" : "https://github.com/kazuph/Acme-Tategaki",
       "repository" : {
-         "type" : "git",
-         "url" : "git://github.com/kazuph/Acme-Tategaki.git",
+         "url" : "https://github.com/kazuph/Acme-Tategaki.git",
          "web" : "https://github.com/kazuph/Acme-Tategaki"
       }
    },
