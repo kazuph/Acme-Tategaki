@@ -9,7 +9,7 @@ use Array::Transpose::Ragged qw/transpose_ragged/;
 use parent 'Exporter';
 our @EXPORT = qw( tategaki );
 
-our $VERSION = "0.09";
+our $VERSION = "0.10";
 
 my @punc = qw(、 。 ， ．);
 

@@ -2,6 +2,9 @@ Revision history for Perl extension Acme-Tategaki
 
 {{$NEXT}}
 
+0.10 2013-06-21T02:25:47Z
+    - added Test::Base::Less and Acme::Tategaki dose not Encode/Decode String.
+
 0.09 2013-06-18T14:58:06Z
     - change a dependence module and added test
 
@@ -27,6 +30,5 @@ Revision history for Perl extension Acme-Tategaki
     - catch a error
 
 0.01 2013-06-16T06:34:58Z
-
     - original version
 
