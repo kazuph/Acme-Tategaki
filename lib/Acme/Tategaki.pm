@@ -3,8 +3,8 @@ use 5.008005;
 use strict;
 use warnings;
 use utf8;
-
 use Array::Transpose::Ragged qw/transpose_ragged/;
+use Encode qw/encode_utf8 decode_utf8/;
 
 use parent 'Exporter';
 our @EXPORT = qw( tategaki );
@@ -14,19 +14,34 @@ our $VERSION = "0.10";
 my @punc = qw(、 。 ， ．);
 
 sub tategaki {
-    my @text = @_;
-    return unless scalar @text;
-    my $text = join '　', @text;
+    my $text = shift;
 
     $text =~ s/$_\s?/$_　/g for @punc;
-    $text =~ tr/ー「」→↑←↓＝=,、。〖〗…/｜¬∟↓→↑←॥॥︐︑︒︗︘︙/;
-    @text = split /\s/, $text;
+    my @text = split /\s/, $text;
 
     @text = map { [ split //, $_ ] } @text;
     @text = transpose_ragged( \@text );
     @text = map { [ map {$_ || '　' } @$_ ] } @text;
     @text = map { join '　', reverse @$_ } @text;
-    return wantarray ? @text : join "\n", @text;
+
+    for (@text) {
+        $_ =~ tr/／‥−－─ー「」→↑←↓＝=,、。〖〗【】…/＼：｜｜｜｜¬∟↓→↑←॥॥︐︑︒︗︘︗︘︙/;
+        $_ =~ s/〜/∫ /g;
+        $_ =~ s/『/ ┓/g;
+        $_ =~ s/』/┗ /g;
+        $_ =~ s/［/┌┐/g;
+        $_ =~ s/］/└┘/g;
+        $_ =~ s/\[/┌┐/g;
+        $_ =~ s/\]/└┘/g;
+        $_ =~ s/＜/∧ /g;
+        $_ =~ s/＞/∨ /g;
+        $_ =~ s/</∧ /g;
+        $_ =~ s/>/∨ /g;
+        $_ =~ s/《/∧ /g;
+        $_ =~ s/》/∨ /g;
+    }
+
+    return join "\n", @text;
 }
 
 1;

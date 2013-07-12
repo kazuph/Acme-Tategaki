@@ -160,3 +160,95 @@ n
 =
 --- expected
 ॥
+===
+--- input
+／
+--- expected
+＼
+===
+--- input
+〜
+--- expected
+∫ 
+===
+--- input
+『
+--- expected
+ ┓
+===
+--- input
+』
+--- expected
+┗ 
+===
+--- input
+縦書〜　だよ〜 『縦書だよねー』 うん【縦書！】
+--- expected
+う　 ┓　だ　縦
+ん　縦　よ　書
+︗　書　∫ 　∫ 
+縦　だ　　　　
+書　よ　　　　
+！　ね　　　　
+︘　｜　　　　
+　　┗ 　　　　
+===
+--- input
+[
+--- expected
+┌┐
+===
+--- input
+]
+--- expected
+└┘
+===
+--- input
+［
+--- expected
+┌┐
+===
+--- input
+］
+--- expected
+└┘
+===
+--- input
+<
+--- expected
+∧ 
+===
+--- input
+>
+--- expected
+∨ 
+===
+--- input
+＜
+--- expected
+∧ 
+===
+--- input
+＞
+--- expected
+∨ 
+===
+--- input
+《
+--- expected
+∧ 
+===
+--- input
+》
+--- expected
+∨ 
+===
+--- input
+＜それは！＞　《だめだ！》　［きっと！］
+--- expected
+┌┐　∧ 　∧ 
+き　だ　そ
+っ　め　れ
+と　だ　は
+！　！　！
+└┘　∨ 　∨ 
