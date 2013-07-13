@@ -10,7 +10,7 @@ use Data::Dump qw/dump/;
 use parent 'Exporter';
 our @EXPORT = qw( tategaki tategaki_one_line);
 
-our $VERSION = "0.11";
+our $VERSION = "0.12";
 
 my @punc = qw(、 。 ， ．);
 

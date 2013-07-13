@@ -11,11 +11,11 @@ binmode STDOUT => ':encoding(console_out)';
 Encode::Locale::decode_argv;
 
 unless (scalar @ARGV) {
-    print "Usage: \$ tategaki お前は、すでに、死んでいる。\n";
+    print "Usage: \$ tategaki_one_line お前は、すでに、死んでいる。\n";
     exit 1;
 }
 
-print tategaki(@ARGV);
+print scalar tategaki_one_line(@ARGV);
 print "\n";
 
 __END__
@@ -28,13 +28,21 @@ tategaki - This command makes a text vertically.
 
 =head1 SYNOPSIS
 
-    $ tategaki お前は、すでに、死んでいる。
-    死　す　お
-    ん　で　前
-    で　に　は
-    い　︑　︑
+    $ tategaki_one_line お前は、すでに、死んでいる。
+    お
+    前
+    は
+    ︑
+    す
+    で
+    に
+    ︑
+    死
+    ん
+    で
+    い
     る
-    ︒　　　　
+    ︒
 
 =head1 AUTHOR
 
