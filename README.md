@@ -12,7 +12,22 @@ Acme::Tategaki - This Module makes a text vertically.
     る　　　　
     ︒　　　　
 
-# DESCRIPTION
+    $ perl -MAcme::Tategaki -MEncode -e 'print encode_utf8 tategaki_one_line(decode_utf8 "お前は、すでに、死んでいる。"), "\n";'
+    お
+    前
+    は
+    ︑
+    す
+    で
+    に
+    ︑
+    死
+    ん
+    で
+    い
+    る
+    ︒
+=head1 DESCRIPTION
 
 Acme::Tategaki makes a text vertically.
 

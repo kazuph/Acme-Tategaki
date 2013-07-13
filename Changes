@@ -2,6 +2,10 @@ Revision history for Perl extension Acme-Tategaki
 
 {{$NEXT}}
 
+0.11 2013-07-13T09:51:47Z
+
+    - added tategaki_one_line method and corresponding to the conversion to vertical writing various
+
 0.10 2013-06-21T02:25:47Z
     - added Test::Base::Less and Acme::Tategaki dose not Encode/Decode String.
 

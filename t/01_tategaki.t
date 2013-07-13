@@ -5,17 +5,17 @@ use Encode;
 use utf8;
 
 filters {
+    input => [ qw/chomp/ ],
     expected => [ qw/chomp/ ],
 };
 
 for my $block (blocks) {
-    is( scalar tategaki(map {decode_utf8 $_} $block->input), decode_utf8 $block->expected );
+    is( tategaki(map {decode_utf8 $_} $block->input), decode_utf8 $block->expected );
 }
 
 done_testing;
 
 __DATA__
-
 ===
 --- input
 ほげ、ふが。ほげ→

@@ -5,20 +5,30 @@ use warnings;
 use utf8;
 use Array::Transpose::Ragged qw/transpose_ragged/;
 use Encode qw/encode_utf8 decode_utf8/;
+use Data::Dump qw/dump/;
 
 use parent 'Exporter';
-our @EXPORT = qw( tategaki );
+our @EXPORT = qw( tategaki tategaki_one_line);
 
-our $VERSION = "0.10";
+our $VERSION = "0.11";
 
 my @punc = qw(、 。 ， ．);
 
+sub tategaki_one_line {
+    my $text = shift;
+    return _convert_vertical(($text));
+
+}
+
 sub tategaki {
     my $text = shift;
-
     $text =~ s/$_\s?/$_　/g for @punc;
     my @text = split /\s/, $text;
+    return _convert_vertical(@text);
+}
 
+sub _convert_vertical {
+    my @text = @_;
     @text = map { [ split //, $_ ] } @text;
     @text = transpose_ragged( \@text );
     @text = map { [ map {$_ || '　' } @$_ ] } @text;
@@ -40,8 +50,14 @@ sub tategaki {
         $_ =~ s/《/∧ /g;
         $_ =~ s/》/∨ /g;
     }
+    # print dump @text;
 
     return join "\n", @text;
+}
+
+if ( __FILE__ eq $0 ) {
+    print encode_utf8(tategaki decode_utf8 'お前は、すでに、死んでいる。'), "\n";
+    print encode_utf8(tategaki_one_line decode_utf8 'お前は、すでに、死んでいる。');
 }
 
 1;
@@ -64,6 +80,21 @@ Acme::Tategaki - This Module makes a text vertically.
     る　　　　
     ︒　　　　
 
+    $ perl -MAcme::Tategaki -MEncode -e 'print encode_utf8 tategaki_one_line(decode_utf8 "お前は、すでに、死んでいる。"), "\n";'
+    お
+    前
+    は
+    ︑
+    す
+    で
+    に
+    ︑
+    死
+    ん
+    で
+    い
+    る
+    ︒
 =head1 DESCRIPTION
 
 Acme::Tategaki makes a text vertically.
